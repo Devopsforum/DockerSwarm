@@ -11,3 +11,18 @@ services:
     image: postgres
     environment:
       - POSTGRES_PASSWORD:'mysecretpassword'
+
+
+
+version: '3.0'
+
+services:
+  jenkins:
+    image: jenkins/jenkins:lts
+    ports:
+      - 50000:8080
+      - 8089:8080
+    volumes:
+      - jenkins_home:/var/jenkins_home
+volumes:
+  jenkins_home:
